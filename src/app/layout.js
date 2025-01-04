@@ -106,7 +106,7 @@ export default function RootLayout({ children }) {
                                     <h1>RTL</h1>
                                 </div>
                             </div>
-                            <div className="w-[80%] h-[190px] flex flex-col justify-center p-4 gap-1 bg-gradient-to-l from-blue-400 to-blue-500 rounded-xl shadow-lg">
+                            <div className="w-[80%] h-[190px] flex flex-col justify-center p-4 gap-1  rounded-xl shadow-lg"  style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}>
                                 <div className="p-1 bg-white w-fit rounded-lg">
                                 <BiSolidDashboard className=' text-white text-2xl' color='black' />
                                 </div>
@@ -117,8 +117,9 @@ export default function RootLayout({ children }) {
                                 </div>
                                 <Button
                                     name={'DOCUMENTATION'}
-                                    className={' rounded-lg'}
-                                    bgcolor={"bg-blue-600 text-white text-xs"}
+                                    className={' rounded-lg text-black'}
+                                    bgcolor={"text-white text-xs  bg-white "}
+                                    pClass={"text-black"}
                                 />
                             </div>
                         </div>

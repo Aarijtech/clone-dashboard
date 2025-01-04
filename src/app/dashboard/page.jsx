@@ -95,7 +95,7 @@ function page() {
                                     <Link href={'/dashboard'}>
 
                                         <div className={`w-[80%]  flex gap-3 items-center rounded-lg p-2 ${pathname == "/dashboard" ? "bg-white" : ''}  `}>
-                                            <div className={`p-2 rounded-lg ${pathname === "/dashboard" ? "bg-blue-800" : ""} `}>
+                                            <div className={`p-2 rounded-lg ${pathname === "/dashboard" ? ""  : ""} `}>
                                                 <BiSolidDashboard className=' text-black text-2xl ' color={`${pathname == "/dashboard" ? "white" : 'black'}`} />
                                             </div>
                                             <div>
@@ -105,7 +105,7 @@ function page() {
                                     </Link>
                                     <Link href={'/table'}>
                                         <div className={`w-[80%] flex gap-3 items-center  rounded-lg p-2  ${pathname == "/table" ? "bg-white" : ''} `}>
-                                            <div className={`p-2 rounded-lg ${pathname == "/table" ? " bg-blue-800" : ""}`}>
+                                            <div className={`p-2 rounded-lg ${pathname == "/table" ? " "  : ""}`}>
                                                 <BiSolidDashboard className=' text-black  text-2xl' color={`${pathname == "/table" ? "white" : 'black'}`} />
                                             </div>
                                             <div>
@@ -115,7 +115,7 @@ function page() {
                                     </Link>
                                     <Link href={'/billing'}>
                                         <div className={`w-[80%] flex gap-3 items-center  rounded-lg p-2  ${pathname == "/billing" ? "bg-white" : ''} `}>
-                                            <div className={`p-2 rounded-lg ${pathname == "/billing" ? " bg-blue-800" : ""}`}>
+                                            <div className={`p-2 rounded-lg ${pathname == "/billing" ? " "  : ""}`}>
                                                 <BiSolidDashboard className=' text-black  text-2xl' color={`${pathname == "/billing" ? "white" : 'black'}`} />
                                             </div>
                                             <div>
@@ -125,7 +125,7 @@ function page() {
                                     </Link>
                                     <Link href={'/rtf'}>
                                         <div className={`w-[80%] flex gap-3 items-center  rounded-lg p-2  ${pathname == "/rtf" ? "bg-white" : ''} `}>
-                                            <div className={`p-2 rounded-lg ${pathname == "/rtf" ? " bg-blue-800" : ""}`}>
+                                            <div className={`p-2 rounded-lg ${pathname == "/rtf" ? " "  : ""}`}>
                                                 <BiSolidDashboard className=' text-black  text-2xl' color={`${pathname == "/rtf" ? "white" : 'black'}`} />
                                             </div>
                                             <div>
@@ -230,7 +230,7 @@ function page() {
                             <p className='text-md text-gray-400'>Total Sales</p>
                             <p className='font-bold text-3xl'>$00,0000</p>
                         </div>
-                        <div className='p-3 rounded-xl bg-blue-800'>
+                        <div className='p-3 rounded-xl ' style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }} >
                             <BiDollar color='white' size={25} />
                         </div>
                     </div>
@@ -239,7 +239,7 @@ function page() {
                             <p className='text-md text-gray-400'>Total Users</p>
                             <p className='font-bold text-3xl'>+3,200</p>
                         </div>
-                        <div className='p-3 rounded-xl bg-blue-800'>
+                        <div className='p-3 rounded-xl ' style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }} >
                             <HiUsers color='white' size={25} />
                         </div>
                     </div>
@@ -248,7 +248,7 @@ function page() {
                             <p className='text-md text-gray-400'>New Clients</p>
                             <p className='font-bold text-3xl'>+1,200</p>
                         </div>
-                        <div className='p-3 rounded-xl bg-blue-800'>
+                        <div className='p-3 rounded-xl ' style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}>
                             <FaHeart color='white' size={25} />
                         </div>
                     </div>
@@ -257,15 +257,15 @@ function page() {
                             <p className='text-md text-gray-400'>New Orders</p>
                             <p className='font-bold text-3xl'>$13,200</p>
                         </div>
-                        <div className='p-3 rounded-xl bg-blue-800'>
+                        <div className='p-3 rounded-xl ' style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}>
                             <FaBagShopping color='white' size={25} />
                         </div>
                     </div>
                 </div>
 
                 <div className=' w-full h-full sm:flex sm:flex-row gap-12 sm:gap-6 justify-center items-center flex-col mt-4 2xl:mt-0 lg:gap-4 md:gap-5'>
-                    <div className='sm:w-[49%] sm:h-[50vh] md:h-[54vh] lg:h-[57vh]  xl:h-[62vh] 2xl:h-[69vh] w-fit  rounded-2xl bg-gradient-to-l from-blue-800 to-blue-500'>
-                        <Card className="bg-gradient-to-l from-blue-800 to-blue-500 ">
+                    <div className='sm:w-[49%] sm:h-[50vh] md:h-[54vh] lg:h-[57vh]  xl:h-[62vh] 2xl:h-[69vh] w-fit  rounded-2xl' >
+                        <Card style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}>
                             <CardHeader>
                                 <CardTitle className='text-white'>Month Progress</CardTitle>
                                 <CardDescription className='text-white'>January - June 2024</CardDescription>
@@ -317,7 +317,7 @@ function page() {
                             </div>
                         </Card>
                     </div>
-                    <div className='bg-gradient-to-l py-4 from-blue-800 to-blue-500 sm:w-[49%] sm:h-[50vh] md:h-[54vh] lg:h-[57vh] rounded-2xl xl:h-[62vh] 2xl:h-[69vh] mt-4 sm:mt-0  flex justify-center items-center'>
+                    <div className='py-4 sm:w-[49%] sm:h-[50vh] md:h-[54vh] lg:h-[57vh] rounded-2xl xl:h-[62vh] 2xl:h-[69vh] mt-4 sm:mt-0  flex justify-center items-center' style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}>
                         <div className='h-[90%] w-[90%]'>
                             <ResponsiveContainer width="100%" height="100%">
                                 <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}  >
@@ -463,7 +463,8 @@ function page() {
                             <Button
                                 name={'REVERSE'}
                                 className={' rounded-lg'}
-                                bgcolor={"bg-blue-600 text-white text-xs"}
+                                bgcolor={"text-white text-xs"}
+                                style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}
                             />
                         </div>
                     </div>
