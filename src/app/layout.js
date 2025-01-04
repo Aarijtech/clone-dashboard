@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { BiSolidDashboard } from "react-icons/bi";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",

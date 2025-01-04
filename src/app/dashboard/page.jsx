@@ -1,14 +1,19 @@
 "use client"
 import { usePathname } from 'next/navigation'
-import React from 'react'
-import { BiDollar, BiRightArrowAlt, BiSearch } from 'react-icons/bi'
+import React, { useState } from 'react'
+import { BiDollar, BiRightArrowAlt, BiSearch, BiSolidDashboard } from 'react-icons/bi'
 import { IoPersonCircle, IoSettings } from "react-icons/io5";
-import { FaBell } from "react-icons/fa";
+import { FaBars, FaBell } from "react-icons/fa";
+import Link from "next/link";
 import { HiUsers } from "react-icons/hi";
 import { FaHeart } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import { RiArrowRightWideFill } from "react-icons/ri";
 import { Line, LineChart, CartesianGrid, XAxis, YAxis, Bar, BarChart, Tooltip, ResponsiveContainer } from "recharts"
+import '@/app/styles/globals.css';
+import { RxCross2 } from "react-icons/rx";
+
+
 
 import {
     Card,
@@ -28,6 +33,7 @@ import Button from '@/components/Button';
 
 
 function page() {
+    const [toggle, setToggle] = useState(false)
     const pathname = usePathname()
     const chartData = [
         { month: "January", desktop: 186, mobile: 80 },
@@ -70,6 +76,120 @@ function page() {
     const data = [{ name: 'Page A', uv: 400, pv: 2400, amt: 2400 }];
     return (
         <>
+            {
+                toggle ?
+                    (
+                        <div
+                            className={`bg-blue-700 shadow_pri lg:hidden ${toggle === false ? "w-[0%]" : "max-[321px]:w-[14rem] w-[16.5rem] absolute top-0 left-0"}  lg:w-[20%] xl:w-[18%] min-[1450px]:w-[14%] h-full lg:relative overflow-y-auto transition-all duration-300 z-50`}>
+                            <div
+                                className={`border-2 border-white w-full max-[321px]:h-[5rem]  flex justify-center items-center ${toggle === false ? "opacity-0" : "opacity-100"
+                                    } lg:opacity-100`}
+                            >
+
+                                <div className='flex flex-col  gap-4 py-10 mt-4 pl-6 bg-gray-200 '>
+                                    <div className='flex items-center justify-between w-full px-2'>
+                                        <h1 className='font-bold text-3xl'>LOGO</h1>
+                                        <RxCross2 className='text-3xl' color='blue' onClick={() => setToggle(false)} />
+                                    </div>
+
+                                    <Link href={'/dashboard'}>
+
+                                        <div className={`w-[80%]  flex gap-3 items-center rounded-lg p-2 ${pathname == "/dashboard" ? "bg-white" : ''}  `}>
+                                            <div className={`p-2 rounded-lg ${pathname === "/dashboard" ? "bg-blue-800" : ""} `}>
+                                                <BiSolidDashboard className=' text-black text-2xl ' color={`${pathname == "/dashboard" ? "white" : 'black'}`} />
+                                            </div>
+                                            <div>
+                                                <h1>Home</h1>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                    <Link href={'/table'}>
+                                        <div className={`w-[80%] flex gap-3 items-center  rounded-lg p-2  ${pathname == "/table" ? "bg-white" : ''} `}>
+                                            <div className={`p-2 rounded-lg ${pathname == "/table" ? " bg-blue-800" : ""}`}>
+                                                <BiSolidDashboard className=' text-black  text-2xl' color={`${pathname == "/table" ? "white" : 'black'}`} />
+                                            </div>
+                                            <div>
+                                                <h1>Table</h1>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                    <Link href={'/billing'}>
+                                        <div className={`w-[80%] flex gap-3 items-center  rounded-lg p-2  ${pathname == "/billing" ? "bg-white" : ''} `}>
+                                            <div className={`p-2 rounded-lg ${pathname == "/billing" ? " bg-blue-800" : ""}`}>
+                                                <BiSolidDashboard className=' text-black  text-2xl' color={`${pathname == "/billing" ? "white" : 'black'}`} />
+                                            </div>
+                                            <div>
+                                                <h1>billing</h1>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                    <Link href={'/rtf'}>
+                                        <div className={`w-[80%] flex gap-3 items-center  rounded-lg p-2  ${pathname == "/rtf" ? "bg-white" : ''} `}>
+                                            <div className={`p-2 rounded-lg ${pathname == "/rtf" ? " bg-blue-800" : ""}`}>
+                                                <BiSolidDashboard className=' text-black  text-2xl' color={`${pathname == "/rtf" ? "white" : 'black'}`} />
+                                            </div>
+                                            <div>
+                                                <h1>RTF</h1>
+                                            </div>
+                                        </div>
+                                    </Link>
+
+
+
+                                    <h1>Account pages</h1>
+                                    <div className='flex flex-col gap-3'>
+
+
+                                        <div className='w-[80%] flex gap-3 items-center  rounded-lg p-2 '>
+                                            <div className='bg-white  p-2 rounded-lg'>
+                                                <BiSolidDashboard className=' text-black  text-2xl' color='black' />
+                                            </div>
+                                            <div>
+                                                <h1>RTL</h1>
+                                            </div>
+                                        </div>
+                                        <div className='w-[80%] flex gap-3 items-center  rounded-lg p-2  '>
+                                            <div className='bg-white  p-2 rounded-lg'>
+                                                <BiSolidDashboard className=' text-black  text-2xl' color='black' />
+                                            </div>
+                                            <div>
+                                                <h1>RTL</h1>
+                                            </div>
+                                        </div>
+                                        <div className='w-[80%] flex gap-3 items-center  rounded-lg p-2  '>
+                                            <div className='bg-white  p-2 rounded-lg'>
+                                                <BiSolidDashboard className=' text-black  text-2xl' color='black' />
+                                            </div>
+                                            <div>
+                                                <h1>RTL</h1>
+                                            </div>
+                                        </div>
+                                        <div className="w-[80%] h-[190px] flex flex-col justify-center p-4 gap-1 bg-gradient-to-l from-blue-400 to-blue-500 rounded-xl shadow-lg">
+                                            <div className="p-1 bg-white w-fit rounded-lg">
+                                                <BiSolidDashboard className=' text-white text-2xl' color='black' />
+                                            </div>
+                                            <div>
+                                                <h1 className=' text-white'>Need Help?</h1>
+                                                <h1 className=' text-white'>Please check our docs</h1>
+
+                                            </div>
+                                            <Button
+                                                name={'DOCUMENTATION'}
+                                                className={' rounded-lg'}
+                                                bgcolor={"bg-blue-600 text-white text-xs"}
+                                            />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    ) :
+                    null
+            }
             <div className='w-full  bg-gray-200 p-6 '>
                 <div className='w-full flex sm:justify-between sm:pb-10 pb-4  px-7 flex-col sm:flex-row'>
                     <div>
@@ -91,9 +211,20 @@ function page() {
                         <div className='gap-2 items-center hidden sm:flex'>
                             <FaBell className='text-xl' />
                         </div>
+                        <div className='gap-2 items-center  sm:hidden'>
+                            {
+                                toggle ? (
+                                    <RxCross2 className='text-3xl' color='blue' onClick={() => setToggle(false)} />
+
+                                ) :
+                                    (
+                                        <FaBars className='text-3xl' color='blue' onClick={() => setToggle(true)} />
+                                    )
+                            }
+                        </div>
                     </div>
                 </div>
-                <div className='flex w-full items-center sm:justify-evenly h-[50vh] sm:h-[22vh]  md:h-[22vh] pb-10 2xl:pb-0 flex-col sm:flex-row gap-4 sm:flex-wrap'>
+                <div className='flex w-full items-center sm:justify-evenly h-[50vh]   md:h-[22vh] pb-10 2xl:pb-0 flex-col sm:flex-row gap-4 sm:flex-wrap'>
                     <div className=' mt-4 w-[270px] sm:mt-0 sm:w-[300px] md:w-[40%] xl:w-[20%]  2xl:w-[20%]   rounded-xl bg-white flex p-2 items-center justify-between'>
                         <div>
                             <p className='text-md text-gray-400'>Total Sales</p>
@@ -197,7 +328,6 @@ function page() {
                                     <Tooltip />
                                 </LineChart>
                             </ResponsiveContainer>
-
                         </div>
                     </div>
 
@@ -348,9 +478,9 @@ function page() {
                             <RiArrowRightWideFill className='text-blue-900' />
                         </div>
                     </div>
-                    <div className='sm:w-[39%] w-full bg-white rounded-xl shadow-xl p-4 flex justify-center flex-col  gap-2 px-6 h-[30vh] mt-4 sm:mt-0 mb-10'>
-                        <div className=' bg-white rounded-xl shadow-xl  flex justify-center flex-col  gap-3 px-6 h-[30vh] bg-gradient-to-r from-purple-700 to-sky-400'>
-                            <p className='text-3xl text-white font-bold'>Work with the best</p>
+                    <div className='sm:w-[39%] w-full bg-white rounded-xl shadow-xl p-4 flex justify-center flex-col  gap-2 px-6 h-[30vh] mt-4 sm:mt-0 '>
+                        <div className=' bg-white rounded-xl shadow-xl  flex justify-center flex-col  gap-3 px-6 h-[30vh] '  style={{ backgroundImage: 'linear-gradient(to right top, #00A3B1, #00A3B1, #49bdc7, #00A3B1, #00A3B1)', }}>
+                            <p className='text-xs sm:text-3xl text-white font-bold'>Work with the best</p>
                             <p className='text-xs text-white'>Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
                             <div className='flex items-center'>
                                 <p className='text-blue-300'>Read More</p>
